@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button{
+            display:none;
+        }
+
+        p{
+            text-align: center;
+            padding: 20px 0px;
+            color: rgb(128, 57, 57);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>OTP Verification</header>
+                <p>Code has been sent to <%= mail %></p>
+                <form action="/otp" method="post">
+                    <div class="field input-field">
+                        <input type="number" name="otp" placeholder="Enter OTP" class="input" required>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit">Verify</button>
+                     </div>
+                </form>
+            </div>
+        </div>
+   </section>
+</body>
+</html>
