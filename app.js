@@ -95,48 +95,48 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     //console.log(profile);
-    User.findOne({googleId: profile.id}).then(function(foundUser){
+//     User.findOne({googleId: profile.id}).then(function(foundUser){
         
-        if(!foundUser)
-        {
-            //console.log(profile.emails[0].value);
+//         if(!foundUser)
+//         {
+//             //console.log(profile.emails[0].value);
            
 
 
-            var mailOptions = {
-                from:"dineshbankuru2004@gmail.com",
-                to: profile.emails[0].value,
-                subject: "Welcome aboard!",
-                text: `Hi !
+//             var mailOptions = {
+//                 from:"dineshbankuru2004@gmail.com",
+//                 to: profile.emails[0].value,
+//                 subject: "Welcome aboard!",
+//                 text: `Hi !
 
-Welcome to the team! We’re thrilled to have you here. We know you’re going to be a valuable asset to our company and can’t wait to see what you accomplish.
+// Welcome to the team! We’re thrilled to have you here. We know you’re going to be a valuable asset to our company and can’t wait to see what you accomplish.
                     
-Best regards,
-Dinesh Bankuru.
-`
+// Best regards,
+// Dinesh Bankuru.
+// `
 
-            };
+//             };
 
-            transporter.sendMail(mailOptions , function(err, info){
-                if(err)
-                {
-                    console.log(err);
-                }
-                else
-                {
-                    console.log("Email sent : "+info.response);
-                }
-            });
-            //console.log(profile);
-        }
-        else
-        {
-            //console.log("Found");
-        }
-    })
-    .catch(function(err){
-        console.log(err);
-    })
+//             transporter.sendMail(mailOptions , function(err, info){
+//                 if(err)
+//                 {
+//                     console.log(err);
+//                 }
+//                 else
+//                 {
+//                     console.log("Email sent : "+info.response);
+//                 }
+//             });
+//             //console.log(profile);
+//         }
+//         else
+//         {
+//             //console.log("Found");
+//         }
+//     })
+//     .catch(function(err){
+//         console.log(err);
+//     })
 
     User.findOrCreate({ googleId: profile.id }, function (err, user) {
       return cb(err, user);
