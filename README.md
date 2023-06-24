@@ -40,7 +40,7 @@ Home The Community website harnesses the power of technologies and libraries, in
 
 ## License
 
-This project is licensed under the -----.
+This project is licensed under the LICENSE.
 
 
 ## Contributing
