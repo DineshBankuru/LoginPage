@@ -109,8 +109,8 @@ passport.use(new GoogleStrategy({
                 subject: "Welcome aboard!",
                 text: `Hi !
 
-Welcome to the team! We’re thrilled to have you here. We know you’re going to be a valuable asset to our company and can’t wait to see what you accomplish.
-                    
+Thanks for Signing up!!
+
 Best regards,
 Dinesh Bankuru.
 `
@@ -201,8 +201,7 @@ app.post("/otp" , function(req,res){
             subject: "Welcome aboard!",
             text: `Hi !
     
-Welcome to the team! We’re thrilled to have you here. We know you’re going to be a valuable asset to our company and can’t wait to see what you accomplish.
-
+Thanks for Signing up!!
 
 Best regards,
 Dinesh Bankuru.
